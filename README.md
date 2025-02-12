@@ -1,5 +1,7 @@
 # Qwen2.5-Max API 调用示例
 
+# **详细了解Qwen调用开发文档，请访问[阿里云百炼平台开发参考](https://help.aliyun.com/zh/model-studio/developer-reference/)**
+
 ## 安装依赖包
 ```bash
 pip install openai
@@ -259,4 +261,3 @@ def chat():
 
 
 
-# **详细了解Qwen调用开发文档，请访问[阿里云百炼平台开发参考](https://help.aliyun.com/zh/model-studio/developer-reference/)**
