@@ -1,0 +1,144 @@
+/* 全局样式 */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+/* 聊天容器 */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    width: 90vw; /* 宽度为视口宽度的90% */
+    max-width: 600px; /* 最大宽度限制 */
+    height: 90vh; /* 高度为视口高度的90% */
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    position: relative;
+}
+/* 聊天头部 */
+.chat-header {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    padding: 10px 15px; /* 减小上下内边距 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.chat-header h1 {
+    margin: 0;
+    font-size: 18px; /* 稍微减小标题字体 */
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+.chat-header img {
+    width: 24px; /* 调整图标大小 */
+    height: 24px;
+    margin-right: 8px; /* 图标与文字之间的间距 */
+}
+.chat-header span {
+    font-size: 14px;
+    opacity: 0.8;
+}
+.chat-header button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 14px;
+    text-decoration: underline;
+}
+.chat-header button:hover {
+    opacity: 0.8;
+}
+/* 聊天主体 */
+.chat-body {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #f9fafb;
+}
+.message {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.message.user {
+    align-items: flex-end;
+}
+.message.bot {
+    align-items: flex-start;
+}
+.message-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.message-header img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+.message-header strong {
+    font-size: 14px;
+    font-weight: bold;
+}
+.message-content {
+    max-width: 70%;
+    padding: 10px 15px;
+    border-radius: 10px;
+    position: relative;
+}
+.message.user .message-content {
+    background-color: #007bff;
+    color: white;
+}
+.message.bot .message-content {
+    background-color: #e9ecef;
+    color: #333;
+}
+/* 聊天底部 */
+.chat-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background-color: #ffffff;
+}
+.chat-footer input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    margin-right: 10px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+.chat-footer input:focus {
+    border-color: #007bff;
+}
+.chat-footer button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+.chat-footer button:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+}

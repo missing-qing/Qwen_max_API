@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qwen-Chat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}?v=1.0.1">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1><img src="https://chat.qwenlm.ai/static/favicon.png" alt="Bot Icon">Qwen-Chatbot</h1>
+             <div class="welcome-message">欢迎，workQ</div>
+            <button>退出</button>
+        </div>
+        <div class="chat-body" id="chatbox"></div>
+        <div class="chat-footer">
+            <input type="text" id="userInput" placeholder="Type your message...">
+            <button id="sendButton">Send</button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/base.js') }}?v=1.0.1"></script>
+    {% block content %}
+
+    {% endblock %}
+</body>
+</html>
