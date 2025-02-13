@@ -177,7 +177,7 @@ completion = client.chat.completions.create(
 ## 流式输出前端实现
 前端可以通过Server-Sent Events (SSE) 从后端获取模型的回复。
 ```js
-const eventSource = new EventSource(`/chat?message=${encodeURIComponent(userInput)}`);
+ const eventSource = new EventSource(`/chat?message=${encodeURIComponent(userInput)}`);
     let chatId = null;
 
     eventSource.onmessage = function (event) {
@@ -186,7 +186,7 @@ const eventSource = new EventSource(`/chat?message=${encodeURIComponent(userInpu
         if (data === '[START]') {
             chatId = generateUUID();
             const botIconUrl = 'https://chat.qwenlm.ai/static/favicon.png';
-            addMessageToChatbox('bot', 'Qwen2.5-Max', '', botIconUrl);
+            addMessageToChatbox('bot', 'Qwen2.5-Max', '', botIconUrl,chatId);
         } else if (data === '[DONE]') {
             eventSource.close();
             scrollToBottom();
@@ -200,13 +200,6 @@ const eventSource = new EventSource(`/chat?message=${encodeURIComponent(userInpu
             }
         }
     };
-
-    eventSource.onerror = function (error) {
-        console.error('Error occurred with SSE connection:', error);
-        eventSource.close();
-        addMessageToChatbox('error', '系统', '无法连接到服务器', '');
-    };
-});
 ```
 
 1. **生成唯一ID**：在每次发送请求时，生成一个唯一的ID，用于标识当前回复的聊天记录。
