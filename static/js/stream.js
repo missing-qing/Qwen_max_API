@@ -1,4 +1,3 @@
-// 绑定发送按钮事件
 document.getElementById('sendButton').addEventListener('click', function () {
     const userInput = document.getElementById('userInput').value.trim();
     if (!userInput) return;
@@ -20,7 +19,7 @@ document.getElementById('sendButton').addEventListener('click', function () {
         if (data === '[START]') {
             chatId = generateUUID();
             const botIconUrl = 'https://chat.qwenlm.ai/static/favicon.png';
-            addMessageToChatbox('bot', 'Qwen2.5-Max', '', botIconUrl);
+            addMessageToChatbox('bot', 'Qwen2.5-Max', '', botIconUrl,chatId);
         } else if (data === '[DONE]') {
             eventSource.close();
             scrollToBottom();
