@@ -23,7 +23,7 @@ function generateUUID() {
 }
 
 // 创建消息元素的函数
-function createMessageElement(senderType, senderName, content, iconUrl) {
+function createMessageElement(senderType, senderName, content, iconUrl,chatId) {
     const messageDiv = document.createElement('div');
     messageDiv.className = `message ${senderType}`;
 
@@ -42,6 +42,9 @@ function createMessageElement(senderType, senderName, content, iconUrl) {
 
     const contentDiv = document.createElement('div');
     contentDiv.className = 'message-content';
+    if (chatId) {
+        contentDiv.id = `${chatId}`;
+    }
     contentDiv.textContent = content;
 
     messageDiv.appendChild(headerDiv);
@@ -51,9 +54,9 @@ function createMessageElement(senderType, senderName, content, iconUrl) {
 }
 
 // 添加消息到聊天框
-function addMessageToChatbox(senderType, senderName, content, iconUrl) {
+function addMessageToChatbox(senderType, senderName, content, iconUrl,chatId) {
     const chatbox = document.getElementById('chatbox');
-    const messageElement = createMessageElement(senderType, senderName, content, iconUrl);
+    const messageElement = createMessageElement(senderType, senderName, content, iconUrl,chatId);
     chatbox.appendChild(messageElement);
     scrollToBottom();
 }
